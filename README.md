@@ -8,7 +8,7 @@ Simple init for containers. Forked from [go-init](https://github.com/adambkaplan
 
 - It removes the need for `-main`
 - It adds non-ideal logic (ideally use proper SDKs in app)
-    - Ability to load secrets into env vars from AWS Secret Manager.
+    - Ability to load secrets into env vars from AWS Secret Manager
 
 ## Usage
 
@@ -23,13 +23,10 @@ ctx-init -pre "my_pre_command param1" -post "my_post_command param1" -- my_comma
 
 # as a simple init with injected secrets
 SOME_SECRET=aws:sm:::test/hello \
-  ctx-init -- echo "\$SOME_SECRET"
+  ctx-init -- bash -c "echo \$SOME_SECRET"
 
-# as a simple init with debug log level
+# as a simple init with debug log level and json output
 LOG_LEVEL=debug \
-ctx-init -- my_command param1 param2
-
-# as a simple init with json output
 LOG_OUTPUT=json \
-ctx-init -- my_command param1 param2
+  ctx-init -- my_command param1 param2
 ```
