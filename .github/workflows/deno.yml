@@ -3,7 +3,7 @@ name: Deno Build and Release
 on:
   push:
     branches:
-      - main
+      - deno
   release:
     types:
       - created
