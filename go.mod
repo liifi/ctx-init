@@ -1,4 +1,4 @@
-module github.com/adambkaplan/ctx-init
+module github.com/liifi/ctx-init
 
 go 1.22
 
